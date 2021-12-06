@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Walmart from './walmartMain';
+import Company from './companyMain';
 import FullCouse from './fullCouseMain';
 import { selectSection } from '../../redux/selectSectionSlice'
 
@@ -9,7 +9,7 @@ const MainComponent = () => {
     const currentSelected = useSelector((state) => state.section.selectedSection);
     const selectFunction = (e)=>{
         switch(e.target.value){
-            case 'walmart':
+            case 'company':
                 dispatch(selectSection(1));
                 break;
             case 'fullCourse':
@@ -23,7 +23,7 @@ const MainComponent = () => {
     const renderChosen = (selectedSection) => {
         switch(selectedSection){
             case 1:
-                return <Walmart/>
+                return <Company/>
             case 2:
                 return <FullCouse/>
             default:
@@ -43,7 +43,7 @@ const MainComponent = () => {
             <div>
                 <select id='selectSection' name="selecSection" onChange={selectFunction} defaultValue="" >
                     <option value=""  disabled hidden></option>
-                    <option value="walmart">Walmtart Interview Questions</option>
+                    <option value="company">Company Interview Questions</option>
                     <option value="fullCourse">Full course Questions</option>
                 </select>
             </div>

@@ -1,72 +1,72 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from "react-redux";
-import { setWMAlgo } from '../../redux/selectWMAlgoSlice'
+// import { setCompanyAlgo } from '../../redux/selectCompanyAlgoSlice'
 import Menu from './menu';
 
 const WalmtartMain =()=>{
     const [selectedAlgo, SetSelectedAlgo] = React.useState(0)
     const dispatch= useDispatch();
-const wmList = [
+const compList = [
     {
-        value: 'WM1',
-        classN:'wmButton',
+        value: 'Comp1',
+        classN:'CompButton',
         callback:SetSelectedAlgo,
         index:1,
 
     },
     {
-        value: 'WM2',
-        classN:'wmButton',
+        value: 'Comp2',
+        classN:'CompButton',
         callback:SetSelectedAlgo,
         index:2,
 
     },
     {
-        value: 'WM3',
-        classN:'wmButton',
+        value: 'Comp3',
+        classN:'CompButton',
         callback:SetSelectedAlgo,
         index:3,
 
     },
     {
-        value: 'WM4',
-        classN:'wmButton',
+        value: 'Comp4',
+        classN:'CompButton',
         callback:SetSelectedAlgo,
         index:4,
 
     },
     {
-        value: 'WM5',
-        classN:'wmButton',
+        value: 'Comp5',
+        classN:'CompButton',
         callback:SetSelectedAlgo,
         index:5,
 
     },
     {
-        value: 'WM6',
-        classN:'wmButton',
+        value: 'Comp6',
+        classN:'CompButton',
         callback:SetSelectedAlgo,
         index:6,
 
     },
     {
-        value: 'WM7',
-        classN:'wmButton',
+        value: 'Comp7',
+        classN:'CompButton',
         callback:SetSelectedAlgo,
         index:7,
 
 
     },
     {
-        value: 'WM8',
-        classN:'wmButton',
+        value: 'Comp8',
+        classN:'CompButton',
         callback:SetSelectedAlgo,
         index:8,
 
     },
     {
-        value: 'WM9',
-        classN:'wmButton',
+        value: 'Comp9',
+        classN:'CompButton',
         callback:SetSelectedAlgo,
         index:9,
 
@@ -78,7 +78,7 @@ console.log('currently showing', selectedAlgo)
     return(
         <div>
             walmart
-            <Menu list={wmList}/>
+            <Menu list={compList}/>
         </div>
     )
 }
