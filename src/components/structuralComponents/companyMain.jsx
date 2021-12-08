@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from "react-redux";
-// import { setCompanyAlgo } from '../../redux/selectCompanyAlgoSlice'
 import Menu from './menu';
+import Algo1 from '../companyAlgos/cAlgo1';
+import Algo2 from '../companyAlgos/cAlgo2';
+import Algo9 from '../companyAlgos/cAlgo9';
+import Accordion from '../companyAlgos/accordion'
 
 const WalmtartMain =()=>{
     const [selectedAlgo, SetSelectedAlgo] = React.useState(0)
@@ -71,14 +74,42 @@ const compList = [
         index:9,
 
     },
+    {
+        value: 'Acordion',
+        classN:'CompButton',
+        callback:SetSelectedAlgo,
+        index:10,
+
+    },
 ];
 useEffect(()=>{
 console.log('currently showing', selectedAlgo)
 },[selectedAlgo])
+
+    const showProperAlgo=()=>{
+        switch(selectedAlgo){
+            case 1:
+                return <Algo1/>
+            case 2:
+                return <Algo2/>
+            case 9:
+                return <Algo9/>
+            case 10:
+                return <Accordion/>
+            default:
+                return <div>Nothing is selected</div>
+        }
+
+    }
     return(
+        <div>
         <div>
             walmart
             <Menu list={compList}/>
+        </div>
+        <div>
+            {showProperAlgo()}
+        </div>
         </div>
     )
 }

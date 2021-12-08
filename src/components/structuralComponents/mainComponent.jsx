@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Company from './companyMain';
 import FullCouse from './fullCouseMain';
 import { selectSection } from '../../redux/selectSectionSlice'
+import './structural.css'
 
 const MainComponent = () => {
     const dispatch = useDispatch();
@@ -35,7 +36,7 @@ const MainComponent = () => {
     },[currentSelected])
 
     return (
-        <div>
+        <div className="mainCompClass">
             <div>
                 <p>Main menu Component</p>
                 <p>Please select a type of exercise to show</p>
